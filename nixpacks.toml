@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["php82", "python311", "python311Packages.pip"]
+
+[phases.install]
+cmds = [
+  "pip install pandas numpy scikit-learn",
+  "composer install --no-dev" # Solo si usas composer, si no, ignora esta línea
+]
+
+[start]
+cmd = "apache2-foreground"
